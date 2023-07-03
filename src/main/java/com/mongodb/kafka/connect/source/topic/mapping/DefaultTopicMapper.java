@@ -70,7 +70,7 @@ public class DefaultTopicMapper implements TopicMapper {
   @Override
   public String getTopic(final BsonDocument changeStreamDocument) {
 
-    String dbName = getStringFromPath(DB_FIELD_PATH, changeStreamDocument);
+    String dbName = getStringFromPath(DB_FIELD_PATH, changeStreamDocument).replaceAll(".+_", "");
     if (dbName.isEmpty()) {
       return dbName;
     }

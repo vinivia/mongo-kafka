@@ -1,7 +1,10 @@
 # MongoDB Kafka Connector
 
-The official MongoDB Kafka Connector.
+The unofficial MongoDB Kafka Connector.
 
+A fork that remove all prefixes ending with `_` from database names.
+
+E.g. if the MongoDB database has the name `123_test` it will be passed into the processor as `test`.
 
 ## Documentation
 
@@ -44,7 +47,16 @@ See the [changelog](./CHANGELOG.md) for information about changes between releas
 
 ### Note: The following instructions are intended for internal use.
 
-Java 8+ is required to build and compile the source. To build and test the driver:
+Java 8+ is required to build and compile the source.
+
+E.g. on Ubuntu you can run
+
+```
+$ sudo apt update
+$ sudo apt install default-jre
+```
+
+To build and test the driver:
 
 ```
 $ git clone https://github.com/mongodb/mongo-kafka.git
